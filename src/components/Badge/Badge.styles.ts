@@ -27,8 +27,8 @@ export const smallBadgeStyles = css`
   }
 `
 
-export const Badge = styled(Text)`
+export const Pill = styled(Text)`
   margin-left: ${sizes(3)};
-  background-color: ${oldColors.gray[700]};
+  background-color: ${cVar('colorCoreNeutral700')};
   padding: 2px ${sizes(1)};
 `

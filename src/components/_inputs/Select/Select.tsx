@@ -1,7 +1,7 @@
 import { UseSelectStateChange, useSelect } from 'downshift'
 import React, { Ref, forwardRef, useMemo } from 'react'
 
-import { Badge } from '@/components/Badge'
+import { Pill } from '@/components/Badge'
 import { Tooltip } from '@/components/Tooltip'
 import { SvgActionChevronB } from '@/components/_icons'
 
@@ -103,7 +103,7 @@ export const _Select = <T extends unknown>(
             size={size}
           >
             {(valueLabel ?? '') + (selectedItem?.name || placeholder)}
-            {selectedItem?.badgeText && <Badge variant="t100">{selectedItem.badgeText}</Badge>}
+            {selectedItem?.badgeText && <Pill variant="t100">{selectedItem.badgeText}</Pill>}
             <SvgActionChevronB />
           </SelectButton>
           <SelectMenu isOpen={isOpen} {...getMenuProps()}>

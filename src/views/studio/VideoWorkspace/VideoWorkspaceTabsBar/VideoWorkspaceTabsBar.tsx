@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { Badge } from '@/components/Badge'
+import { Pill } from '@/components/Badge'
 import { IconButton } from '@/components/_buttons/IconButton'
 import { SvgActionClose, SvgActionMaximize, SvgActionMinimize, SvgActionPlus } from '@/components/_icons'
 import { VideoWorkspaceState, VideoWorkspaceTab, useVideoWorkspaceTabData } from '@/providers/videoWorkspace'
@@ -127,7 +127,7 @@ const VideoWorkspaceSingleTab: React.FC<VideoWorkspaceTabProps> = ({
         <TabTitle secondary={!selected} variant="t200">
           {tabData?.title || 'Untitled'}
         </TabTitle>
-        {badgeText && <Badge variant="t100">{badgeText}</Badge>}
+        {badgeText && <Pill variant="t100">{badgeText}</Pill>}
       </Tab>
     </TabWrapper>
   )
