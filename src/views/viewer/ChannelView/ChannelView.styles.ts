@@ -1,7 +1,6 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
-import { Tabs } from '@/components/Tabs'
 import { Text } from '@/components/Text'
 import { Button } from '@/components/_buttons/Button'
 import { IconButton } from '@/components/_buttons/IconButton'
@@ -60,12 +59,7 @@ export const Title = styled(Text)`
 `
 
 export const SortContainer = styled.div`
-  grid-area: sort;
   grid-gap: 8px;
-
-  ${media.sm} {
-    grid-area: initial;
-  }
 `
 
 export const SubTitle = styled(Text)`
@@ -145,7 +139,6 @@ export const TabsContainer = styled.div`
 export const UtilitiesContainer = styled.div`
   display: grid;
   gap: ${sizes(2)};
-  grid-template: 'search search search' auto 'sort sort sort' auto / 1fr 1fr;
   align-items: baseline;
   flex-basis: auto;
   width: 100%;
@@ -163,22 +156,12 @@ type SearchContainerProps = {
 }
 export const SearchContainer = styled.div<SearchContainerProps>`
   display: flex;
-  grid-area: search;
   align-items: center;
   margin: ${sizes(6)} 0 ${sizes(2)} 0;
   position: relative;
   ${media.sm} {
-    grid-area: initial;
     margin: 0;
     max-width: 200px;
-  }
-`
-
-export const StyledTabs = styled(Tabs)`
-  grid-area: tabs;
-
-  ${media.sm} {
-    grid-area: initial;
   }
 `
 

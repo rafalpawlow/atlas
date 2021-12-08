@@ -13,6 +13,7 @@ import { EmptyFallback } from '@/components/EmptyFallback'
 import { Grid } from '@/components/Grid'
 import { LimitedWidthContainer } from '@/components/LimitedWidthContainer'
 import { Pagination } from '@/components/Pagination'
+import { Tabs } from '@/components/Tabs'
 import { ViewErrorFallback } from '@/components/ViewErrorFallback'
 import { ViewWrapper } from '@/components/ViewWrapper'
 import { Button } from '@/components/_buttons/Button'
@@ -36,11 +37,9 @@ import {
   PaginationContainer,
   SearchButton,
   SearchContainer,
-  SortContainer,
   StyledButton,
   StyledButtonContainer,
   StyledChannelLink,
-  StyledTabs,
   StyledTextField,
   SubTitle,
   SubTitleSkeletonLoader,
@@ -265,7 +264,7 @@ export const ChannelView: React.FC = () => {
           </StyledButtonContainer>
         </TitleSection>
         <TabsContainer>
-          <StyledTabs
+          <Tabs
             selected={isSearching ? -1 : TABS.findIndex((x) => x === currentTab)}
             initialIndex={0}
             tabs={mappedTabs}
@@ -284,18 +283,16 @@ export const ChannelView: React.FC = () => {
                   />
                 )}
                 {currentTab === 'Videos' && (
-                  <SortContainer>
-                    <Select
-                      size="small"
-                      labelPosition="left"
-                      label="Sort by"
-                      disabled={isSearching}
-                      value={!isSearching ? sortVideosBy : 0}
-                      placeholder={isSearching ? 'Best match' : undefined}
-                      items={!isSearching ? SORT_OPTIONS : []}
-                      onChange={!isSearching ? handleSorting : undefined}
-                    />
-                  </SortContainer>
+                  <Select
+                    size="small"
+                    labelPosition="left"
+                    label="Sort by"
+                    disabled={isSearching}
+                    value={!isSearching ? sortVideosBy : 0}
+                    placeholder={isSearching ? 'Best match' : undefined}
+                    items={!isSearching ? SORT_OPTIONS : []}
+                    onChange={!isSearching ? handleSorting : undefined}
+                  />
                 )}
               </UtilitiesContainer>
             }
