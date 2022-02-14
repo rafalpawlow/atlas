@@ -13,6 +13,7 @@ export const ControlsIndicatorWrapper = styled.div`
   height: 100%;
   top: 0;
   position: absolute;
+  inset: 0;
   pointer-events: none;
   flex-direction: column;
   align-items: center;

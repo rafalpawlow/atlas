@@ -65,7 +65,6 @@ const getPlayerContainerCinematicStyles = ({ cinematicView, calculatedHeight }: 
       `
     : css`
         ${media.md} {
-          height: ${calculatedHeight ? `${calculatedHeight}px` : 'calc(61.5vw * 0.5625)'};
           margin-bottom: ${sizes(8)};
         }
       `
@@ -78,7 +77,7 @@ export const PlayerContainer = styled.div<PlayerContainerProps>`
 `
 
 export const PlayerSkeletonLoader = styled(SkeletonLoader)`
-  position: absolute;
+  aspect-ratio: 16 / 9;
 `
 
 export const TitleContainer = styled.div`

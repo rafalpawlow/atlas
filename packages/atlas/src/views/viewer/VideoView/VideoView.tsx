@@ -173,13 +173,13 @@ export const VideoView: React.FC = () => {
     setDetailsExpanded((prevState) => !prevState)
   }
 
-  const aspectRatio = useMemo(() => {
-    if (!video || !video.mediaMetadata) {
-      return DEFAULT_ASPECT_RATIO
-    }
-    const { pixelHeight, pixelWidth } = video.mediaMetadata
-    return !pixelHeight || !pixelWidth ? DEFAULT_ASPECT_RATIO : pixelHeight / pixelWidth
-  }, [video])
+  // const aspectRatio = useMemo(() => {
+  //   if (!video || !video.mediaMetadata) {
+  //     return DEFAULT_ASPECT_RATIO
+  //   }
+  //   const { pixelHeight, pixelWidth } = video.mediaMetadata
+  //   return !pixelHeight || !pixelWidth ? DEFAULT_ASPECT_RATIO : pixelHeight / pixelWidth
+  // }, [video])
 
   if (error) {
     return <ViewErrorFallback />
@@ -202,7 +202,7 @@ export const VideoView: React.FC = () => {
 
   const foundLicense = knownLicenses.find((license) => license.code === video?.license?.code)
   const isCinematic = cinematicView || !mdMatch
-  const calculatedPlayerHeight = playerContainerWidth && playerContainerWidth * aspectRatio
+  // const calculatedPlayerHeight = playerContainerWidth && playerContainerWidth * aspectRatio
 
   const sideItems = (
     <GridItem colSpan={{ xxs: 12, md: 4 }}>
@@ -311,7 +311,7 @@ export const VideoView: React.FC = () => {
             <PlayerContainer
               className={transitions.names.slide}
               cinematicView={cinematicView}
-              calculatedHeight={calculatedPlayerHeight}
+              // calculatedHeight={calculatedPlayerHeight}
             >
               {!isMediaLoading && video ? (
                 <VideoPlayer
@@ -320,7 +320,8 @@ export const VideoView: React.FC = () => {
                   videoId={video?.id}
                   autoplay
                   src={mediaUrl}
-                  fill
+                  // fill
+                  fluid
                   onEnd={handleVideoEnd}
                   onTimeUpdated={handleTimeUpdate}
                   startTime={startTimestamp}

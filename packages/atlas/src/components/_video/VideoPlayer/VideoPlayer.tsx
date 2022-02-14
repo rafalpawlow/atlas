@@ -200,7 +200,7 @@ const VideoPlayerComponent: React.ForwardRefRenderFunction<HTMLVideoElement, Vid
         setPlayerState('loading')
       }
       if (event.type === 'canplay' || event.type === 'seeked') {
-        setPlayerState('playingOrPaused')
+        // setPlayerState('playingOrPaused')
       }
     }
     player.on(['waiting', 'canplay', 'seeking', 'seeked'], handler)
